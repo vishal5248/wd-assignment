@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Shirt Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fed757,#d9e4f5);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cart {
+            height: 430px;
+            width: 300px;
+            border: 1px solid #ddd;
+            margin: 15px auto;
+            margin-top: 83px;
+            background-color: #fff;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cart:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .shirt {
+            height: 200px;
+            width: 300px;
+            margin-top: 38px;
+            margin-left: 0px;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .shirt:hover {
+            transform: rotateY(180deg);
+        }
+
+        .new {
+            border: 1px solid transparent;
+            height: 30px;
+            width: 70px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            align-items: center;
+            background-color: #e91e63;
+            color: white;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.5);
+            transition: width 0.4s ease;
+            overflow: hidden;
+        }
+
+        .new:hover {
+            width: 292px;
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+            margin-left: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 0, 128, 0.4);
+        }
+
+        #view {
+            padding: 5px;
+            width: 190px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #343a40;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 29px;
+            left: 55px;
+            z-index: 2;
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.5s ease;
+            pointer-events: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .main:hover #view {
+            opacity: 0.95;
+            transform: translateY(170px);
+            pointer-events: auto;
+        }
+
+        h3 {
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        h3:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        p {
+            font-size: 13px;
+            text-align: center;
+            color: #555;
+            margin-top: -10px;
+            margin-left: 4px;
+        }
+
+        .price {
+            text-align: center;
+            margin-top: -4px;
+        }
+
+        .price span {
+            margin-right: 13px;
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .price span:hover {
+            text-shadow: 0 0 8px #ff80ab, 0 0 15px #ff80ab;
+        }
+
+
+        .price del {
+            color: #aaa;
+            margin-right: 8px;
+            font-size: 15px;
+        }
+
+        .submite {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #bt,
+        #wifi {
+            margin-top: -2px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            background: linear-gradient(135deg, #7b81ec, #3bd1d3);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+        }
+
+        #bt:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #fa80d2, #fed757);
+            box-shadow: 0 6px 20px rgba(250, 128, 210, 0.5);
+        }
+
+        #wifi:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #525a69, #898dda);
+            box-shadow: 0 6px 20px rgba(137, 141, 218, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart">
+        <div class="new">
+            <h5><b>New</b></h5>
+        </div>
+        <div class="main">
+            <div class="shirt">
+                <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM="
+                    alt="Funky Printed T-Shirt">
+            </div>
+            <button type="button" id="view">View</button>
+        </div>
+        <h3>Funky Printed T-Shirt</h3>
+        <p>Cool, breathable fabric with vibrant prints 100% Pure Cotton.</p>
+        <div class="price"><span><b>₹ 500</b></span><del>₹ 1000</del></div>
+        <div class="submite">
+            <button type="button" id="bt"><b>Add To Cart</b></button>
+            <button type="button" id="wifi"><b>Buy Now</b></button>
+        </div>
+    </div>
+</body>
+
+</html>

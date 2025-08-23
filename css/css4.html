@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Custom Lists</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Remove default markers */
+.custom-ol,
+.custom-ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.custom-ol li {
+    position: relative;
+    margin: 10px 0;
+    padding-left: 30px;
+    color: #2a4d69;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
+
+.custom-ol li::before {
+    content: "✔ "; 
+    position: absolute;
+    left: 0;
+    color: #f08a5d;
+    font-weight: bold;
+}
+
+
+.custom-ul li {
+     position: relative;
+     
+    margin: 8px 0;
+    padding-left: 25px;
+    color: #4a7c59;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.custom-ul li::before {
+    content: "●"; 
+    position: absolute;
+    left: 0;
+    color: #f4d35e;
+    font-size: 18px;
+    line-height: 1;
+}
+
+        </style>
+</head>
+<body>
+
+    <h2>Ordered List (Custom Markers)</h2>
+    <ol class="custom-ol">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+
+    <h2>Unordered List (Custom Markers)</h2>
+    <ul class="custom-ul">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+
+</body>
+</html>

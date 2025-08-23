@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes and Pseudo-Elements Example</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            line-height: 1.6;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        a:hover {
+            color: #0056b3; 
+        }
+        a:active {
+            color: #ff6600; 
+        }
+        a:visited {
+            color: #6c757d;
+        }
+
+        
+        p::first-line {
+            font-weight: bold;
+            color: #333366;
+            font-size: 18px;
+        }
+
+        
+        h2::before {
+            content: "★ ";
+            color: gold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>My Links</h2>
+        <a href="https://example.com">Example</a>
+        <a href="https://openai.com">OpenAI</a>
+        <a href="https://wikipedia.org">Wikipedia</a>
+    </div>
+
+    <div class="box">
+        <h2>My Paragraph</h2>
+        <p>
+            This is a demonstration of the ::first-line pseudo-element. Only this first line will appear bold and styled differently. 
+            The rest of the paragraph remains in the normal font style.
+        </p>
+    </div>
+</body>
+</html>

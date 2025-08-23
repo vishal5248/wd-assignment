@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flexbox Layout</title>
+  <style>
+    
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      font-family: Arial, sans-serif;
+    }
+
+    header, main, footer {
+      width: 90%;
+      max-width: 1000px;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      text-align: center;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      header, main, footer {
+        margin: 10px;
+        width: auto;
+        flex: 1;
+        max-width: none;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Header</h1>
+    <p>This is the header section.</p>
+  </header>
+  <main>
+    <h2>Main Content</h2>
+    <p>This is the main content area.</p>
+  </main>
+  <footer>
+    <h3>Footer</h3>
+    <p>This is the footer section.</p>
+  </footer>
+</body>
+</html>

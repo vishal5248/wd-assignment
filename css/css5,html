@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Navigation Bar</title>
+  <style>
+    
+    nav {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 10px 0;
+    }
+    
+    nav a {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 0 8px;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none; 
+      font-family: Arial, sans-serif;
+      border-radius: 6px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+   
+    nav a:hover {
+      background-color: #357abd;
+      color: #ffeb3b;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</body>
+</html>

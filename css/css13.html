@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Boxes with Shadow and Animation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            overflow-x: hidden; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #444444;
+            text-align: justify;
+        }
+
+        .animation-area {
+            margin: 50px auto;
+            height: 400px;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            position: absolute;
+            animation: moveBox 5s infinite linear;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+        }
+
+       
+        .box:nth-child(1) { top: 0; animation-delay: 0s; }
+        .box:nth-child(2) { top: 140px; animation-delay: 1s; }
+        .box:nth-child(3) { top: 280px; animation-delay: 2s; }
+
+       
+        @keyframes moveBox {
+            0% {
+                left: 0;
+                background-color: red;
+            }
+            50% {
+                left: calc(100% - 200px);
+                background-color: blue;
+            }
+            100% {
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiple Animated Boxes with Shadow</h1>
+    <p>
+        This example features three boxes, each moving horizontally across the screen.
+        Every box has a shadow for depth and changes its color smoothly during animation.
+    </p>
+
+    <div class="animation-area">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>

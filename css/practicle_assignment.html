@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery with Sidebar</title>
+    <style>
+        /* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Section styling */
+.section {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.home {
+    background: #e0f7fa;
+    text-align: center;
+}
+
+.gallery-section {
+    background: #fff3e0;
+}
+
+.about {
+    background: #e8f5e9;
+}
+
+/* Horizontal navigation menu */
+.nav-horizontal {
+    background: #333;
+    padding: 0.5rem 0;
+}
+
+.nav-horizontal ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-horizontal li {
+    margin: 0 1rem;
+}
+
+.nav-horizontal a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-horizontal a:hover {
+    color: #ffeb3b;
+}
+
+/* Container with sidebar */
+.container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 0.5rem 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Image gallery grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    /* Stack sidebar below main content */
+    .container {
+        flex-direction: column;
+    }
+
+    /* Adjust font sizes */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Optionally hide sidebar heading on very small screens */
+    .sidebar h3 {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Make nav vertical for very small screens */
+    .nav-horizontal ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-horizontal li {
+        margin: 0.5rem 0;
+    }
+
+    body {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+</head>
+<body>
+    <!-- Horizontal Navigation -->
+    <nav class="nav-horizontal">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content with sidebar -->
+    <div class="container">
+        <main class="content">
+            <!-- Home Section -->
+            <section id="home" class="section home">
+                <h1>Welcome to My Webpage</h1>
+                <p>This page demonstrates responsiveness using media queries.</p>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="section gallery-section">
+                <h2>Image Gallery</h2>
+                <div class="gallery">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 1">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 2">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 3">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 4">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 5">
+                    <img src="https://media.istockphoto.com/id/628848462/photo/dot-com-the-most-important-domain-ending.jpg?s=612x612&w=0&k=20&c=Bn4fWevAbXQWot8jyZiZpdAOQqyT-owV_Uz6XJWBikM=" alt="Sample 6">
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section about">
+                <h2>About This Page</h2>
+                <p>We added responsiveness so the layout adjusts on smaller screens.</p>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Go to Home</a></li>
+                <li><a href="#gallery">View Gallery</a></li>
+                <li><a href="#about">Read About</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>

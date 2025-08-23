@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Form</title>
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      box-sizing: border-box;
+    }
+
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #f7f7f7;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      resize: vertical;
+    }
+
+   
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #4a90e2;
+      background-color: #e9f0fb;
+      outline: none;
+    }
+
+   
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px 0;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+      box-shadow: 0 4px 12px rgba(0, 86, 179, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0073b1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+#app {
+  background: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: #0073b1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #005a8c;
+}
+
+.error {
+  color: red;
+  font-size: 0.85em;
+}

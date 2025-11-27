@@ -1,0 +1,20 @@
+// reusable mixins
+@mixin center-flex($dir: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin card($radius: 8px, $pad: 12px) {
+  border-radius: $radius;
+  padding: $pad;
+  background: $card-bg;
+}
+
+@mixin text-ellipsis($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

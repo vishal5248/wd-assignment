@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Layout - Notes App</title>
+  <link rel="stylesheet" href="/scss/styles.css" />
+</head>
+<body>
+
+<div class="frame">
+  <div class="stage">
+
+    <div class="logo">SJ</div>
+
+    <div class="hero">
+      <h1>My Personal Profile</h1>
+      <p>Find out about my accomplishments</p>
+
+      <div class="buttons">
+        <button class="btn" id="open-linkedin">LinkedIn</button>
+        <button class="btn" id="open-twitter">Twitter</button>
+        <button class="btn primary" id="open-menu">Open Notes Menu</button>
+      </div>
+    </div>
+
+    <div class="cards-wrap">
+
+      <div class="card">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nihil ducimus ratione molestias quas.</p>
+        <a href="#" class="learn">Learn More</a>
+      </div>
+
+      <div class="card mid">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <a href="#" class="learn">Learn More</a>
+      </div>
+
+      <div class="card right">
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+        <a href="#" class="learn">Learn More</a>
+      </div>
+
+    </div>
+
+    <!-- ACCENT BEHIND RIGHT CARD -->
+    <div class="diagonal-accent"></div>
+
+  </div>
+</div>
+
+<!-- MENU MODAL (Option B) -->
+<div id="menu-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+  <div class="modal-panel">
+    <header class="modal-header">
+      <h2 id="menuTitle">Notes Menu</h2>
+      <button id="close-menu" class="close-btn" title="Close menu">&times;</button>
+    </header>
+
+    <main class="modal-body" id="modal-body">
+      <nav class="menu-list" id="menu-list">
+        <button class="menu-item" data-action="add">1. Add Note</button>
+        <button class="menu-item" data-action="view">2. View All Notes</button>
+        <button class="menu-item" data-action="search">3. Search Notes</button>
+        <button class="menu-item" data-action="edit">4. Edit Note</button>
+        <button class="menu-item" data-action="delete">5. Delete Note</button>
+        <button class="menu-item" data-action="clearall">6. Clear All Notes</button>
+        <button class="menu-item" data-action="exit">7. Exit Menu</button>
+      </nav>
+
+      <!-- Dynamic content area -->
+      <section id="action-area" class="action-area">
+        <!-- injected by app.js -->
+      </section>
+    </main>
+
+    <footer class="modal-footer">
+      <div id="status" class="status">Select an action from the menu.</div>
+    </footer>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast hidden"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Customization with CSS Variables</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom Bootstrap CSS Variables Override */
+        :root {
+            /* Primary Color Palette - Teal Theme */
+            --bs-primary: #20c997;
+            --bs-primary-rgb: 32, 201, 151;
+            --bs-primary-dark: #1aa179;
+            --bs-primary-light: #a6f0d9;
+            
+            /* Secondary Color Palette - Coral Theme */
+            --bs-secondary: #ff6b6b;
+            --bs-secondary-rgb: 255, 107, 107;
+            --bs-secondary-dark: #e05555;
+            --bs-secondary-light: #ffb8b8;
+            
+            /* Success Color - Purple */
+            --bs-success: #9c27b0;
+            --bs-success-rgb: 156, 39, 176;
+            
+            /* Info Color - Deep Blue */
+            --bs-info: #2196f3;
+            --bs-info-rgb: 33, 150, 243;
+            
+            /* Warning Color - Amber */
+            --bs-warning: #ff9800;
+            --bs-warning-rgb: 255, 152, 0;
+            
+            /* Danger Color - Deep Orange */
+            --bs-danger: #ff5722;
+            --bs-danger-rgb: 255, 87, 34;
+            
+            /* Light and Dark Colors */
+            --bs-light: #f8f9fa;
+            --bs-dark: #212529;
+            
+            /* Body Colors */
+            --bs-body-bg: #f5f7fa;
+            --bs-body-color: #2c3e50;
+            
+            /* Link Colors */
+            --bs-link-color: var(--bs-primary);
+            --bs-link-hover-color: var(--bs-primary-dark);
+            
+            /* Border Colors */
+            --bs-border-color: #dee2e6;
+            --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+            
+            /* Border Radius */
+            --bs-border-radius: 0.75rem;
+            --bs-border-radius-sm: 0.5rem;
+            --bs-border-radius-lg: 1rem;
+            --bs-border-radius-xl: 1.5rem;
+            --bs-border-radius-2xl: 2rem;
+            --bs-border-radius-pill: 50rem;
+            
+            /* Box Shadows */
+            --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+            
+            /* Font Family */
+            --bs-font-sans-serif: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --bs-font-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+            
+            /* Button Customizations */
+            --bs-btn-font-weight: 600;
+            --bs-btn-padding-x: 1.5rem;
+            --bs-btn-padding-y: 0.625rem;
+            --bs-btn-border-radius: var(--bs-border-radius);
+            --bs-btn-border-radius-sm: var(--bs-border-radius-sm);
+            --bs-btn-border-radius-lg: var(--bs-border-radius-lg);
+            
+            /* Button Primary Custom */
+            --bs-btn-bg: var(--bs-primary);
+            --bs-btn-border-color: var(--bs-primary);
+            --bs-btn-hover-bg: var(--bs-primary-dark);
+            --bs-btn-hover-border-color: var(--bs-primary-dark);
+            --bs-btn-active-bg: var(--bs-primary-dark);
+            --bs-btn-active-border-color: var(--bs-primary-dark);
+            --bs-btn-disabled-bg: var(--bs-primary);
+            --bs-btn-disabled-border-color: var(--bs-primary);
+            
+            /* Button Outline Primary */
+            --bs-btn-outline-color: var(--bs-primary);
+            --bs-btn-outline-hover-color: #fff;
+            --bs-btn-outline-hover-bg: var(--bs-primary);
+            --bs-btn-outline-hover-border-color: var(--bs-primary);
+            --bs-btn-outline-active-color: #fff;
+            --bs-btn-outline-active-bg: var(--bs-primary);
+            --bs-btn-outline-active-border-color: var(--bs-primary);
+            
+            /* Form Controls */
+            --bs-form-control-bg: #fff;
+            --bs-form-control-border-color: #ced4da;
+            --bs-form-control-focus-border-color: var(--bs-primary);
+            --bs-form-control-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+            --bs-form-control-border-radius: var(--bs-border-radius);
+            
+            /* Card Customizations */
+            --bs-card-border-radius: var(--bs-border-radius-lg);
+            --bs-card-border-color: rgba(var(--bs-primary-rgb), 0.1);
+            --bs-card-cap-bg: rgba(var(--bs-primary-rgb), 0.05);
+            --bs-card-bg: #fff;
+            
+            /* Navbar Customizations */
+            --bs-navbar-brand-font-size: 1.5rem;
+            --bs-navbar-brand-font-weight: 700;
+            
+            /* Alert Customizations */
+            --bs-alert-border-radius: var(--bs-border-radius);
+            --bs-alert-border-width: 2px;
+            
+            /* Badge Customizations */
+            --bs-badge-border-radius: var(--bs-border-radius-sm);
+            --bs-badge-font-weight: 600;
+            --bs-badge-padding-x: 0.75em;
+            --bs-badge-padding-y: 0.35em;
+            
+            /* Progress Bar Customizations */
+            --bs-progress-border-radius: var(--bs-border-radius-pill);
+            --bs-progress-height: 0.75rem;
+            --bs-progress-bg: rgba(var(--bs-primary-rgb), 0.1);
+        }
+
+        /* Additional Custom Styles */
+        .btn-primary {
+            box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(var(--bs-primary-rgb), 0.4);
+        }
+        
+        .btn-secondary {
+            box-shadow: 0 4px 10px rgba(var(--bs-secondary-rgb), 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(var(--bs-secondary-rgb), 0.4);
+        }
+        
+        .btn-outline-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(var(--bs-primary-rgb), 0.2);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-width: 2px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--bs-box-shadow-lg);
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-width: 2px;
+        }
+        
+        .alert {
+            border-left-width: 5px;
+        }
+        
+        /* Custom Utility Classes */
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-secondary-rgb), 0.1) 100%);
+        }
+        
+        .custom-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.9) 0%, rgba(var(--bs-secondary-rgb), 0.7) 100%);
+            color: white;
+        }
+        
+        .border-primary-subtle {
+            border-color: rgba(var(--bs-primary-rgb), 0.2) !important;
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="#">
+                <i class="bi bi-palette-fill me-2"></i>Custom Bootstrap
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#components">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#buttons">Buttons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#forms">Forms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section py-5 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Customized Bootstrap with CSS Variables</h1>
+                    <p class="lead mb-4">This page demonstrates how to customize Bootstrap 5 using CSS custom properties (variables) to change colors, borders, shadows, and more.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-primary btn-lg">Primary Button</button>
+                        <button class="btn btn-outline-primary btn-lg">Outline Button</button>
+                        <button class="btn btn-secondary btn-lg">Secondary Button</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="card border-0 custom-shadow">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title text-primary">Custom Colors</h5>
+                            <div class="d-flex justify-content-center gap-2 mb-3">
+                                <div class="color-box rounded" style="width: 40px; height: 40px; background-color: var(--bs-primary);"></div>
+                                <div class="color-box rounded" style="width: 40px; height: 40px; background-color: var(--bs-secondary);"></div>
+                                <div class="color-box rounded" style="width: 40px; height: 40px; background-color: var(--bs-success);"></div>
+                                <div class="color-box rounded" style="width: 40px; height: 40px; background-color: var(--bs-info);"></div>
+                            </div>
+                            <p class="text-muted">Primary: Teal (#20c997)<br>Secondary: Coral (#ff6b6b)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Buttons Section -->
+        <section id="buttons" class="mb-5">
+            <h2 class="mb-4 text-primary">Customized Buttons</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Solid Buttons</h5>
+                            <p class="text-muted mb-4">Buttons with custom padding, border-radius, and shadows</p>
+                            <div class="d-flex flex-wrap gap-3 mb-3">
+                                <button class="btn btn-primary">Primary</button>
+                                <button class="btn btn-secondary">Secondary</button>
+                                <button class="btn btn-success">Success</button>
+                                <button class="btn btn-info">Info</button>
+                                <button class="btn btn-warning">Warning</button>
+                                <button class="btn btn-danger">Danger</button>
+                            </div>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button class="btn btn-primary btn-sm">Small</button>
+                                <button class="btn btn-primary">Regular</button>
+                                <button class="btn btn-primary btn-lg">Large</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Outline Buttons</h5>
+                            <p class="text-muted mb-4">Outline buttons with hover effects</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button class="btn btn-outline-primary">Primary</button>
+                                <button class="btn btn-outline-secondary">Secondary</button>
+                                <button class="btn btn-outline-success">Success</button>
+                                <button class="btn btn-outline-info">Info</button>
+                                <button class="btn btn-outline-warning">Warning</button>
+                                <button class="btn btn-outline-danger">Danger</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Components -->
+        <section id="forms" class="mb-5">
+            <h2 class="mb-4 text-primary">Customized Form Elements</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Input Fields</h5>
+                            <p class="text-muted">Form controls with custom border-radius and focus states</p>
+                            
+                            <div class="mb-3">
+                                <label for="exampleInput" class="form-label">Text Input</label>
+                                <input type="text" class="form-control" id="exampleInput" placeholder="Enter your name">
+                                <div class="form-text">Custom border-radius: 0.75rem</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="exampleSelect" class="form-label">Select Menu</label>
+                                <select class="form-select" id="exampleSelect">
+                                    <option selected>Choose an option</option>
+                                    <option value="1">Option One</option>
+                                    <option value="2">Option Two</option>
+                                    <option value="3">Option Three</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="exampleTextarea" class="form-label">Textarea</label>
+                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter your message"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Checkboxes</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="check1">
+                                    <label class="form-check-label" for="check1">
+                                        Default checkbox
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="check2" checked>
+                                    <label class="form-check-label" for="check2">
+                                        Checked checkbox
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Radio Buttons</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioExample" id="radio1">
+                                    <label class="form-check-label" for="radio1">
+                                        Default radio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioExample" id="radio2" checked>
+                                    <label class="form-check-label" for="radio2">
+                                        Checked radio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Switches & Range</h5>
+                            <p class="text-muted">Custom form switches and range inputs</p>
+                            
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="switch1">
+                                    <label class="form-check-label" for="switch1">Default switch</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="switch2" checked>
+                                    <label class="form-check-label" for="switch2">Checked switch</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="formRange" class="form-label">Range Input</label>
+                                <input type="range" class="form-range" id="formRange" min="0" max="100">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="disabledInput" class="form-label">Disabled Input</label>
+                                <input type="text" class="form-control" id="disabledInput" placeholder="Disabled input" disabled>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">File Input</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Submit Form</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerts & Badges -->
+        <section id="components" class="mb-5">
+            <h2 class="mb-4 text-primary">Alerts & Badges</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="alert alert-primary" role="alert">
+                        <strong>Primary Alert!</strong> This is a primary alert with custom border radius.
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        <strong>Success Alert!</strong> This is a success alert with purple color.
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Warning Alert!</strong> This is a warning alert with amber color.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-secondary" role="alert">
+                        <strong>Secondary Alert!</strong> This is a secondary alert with coral color.
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        <strong>Info Alert!</strong> This is an info alert with deep blue color.
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Danger Alert!</strong> This is a danger alert with deep orange color.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Custom Badges</h5>
+                    <p class="text-muted">Badges with custom border-radius and padding</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary">Primary</span>
+                        <span class="badge bg-secondary">Secondary</span>
+                        <span class="badge bg-success">Success</span>
+                        <span class="badge bg-info">Info</span>
+                        <span class="badge bg-warning">Warning</span>
+                        <span class="badge bg-danger">Danger</span>
+                        <span class="badge bg-light text-dark">Light</span>
+                        <span class="badge bg-dark">Dark</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress & Cards -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-primary">Progress Bars & Cards</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Progress Bars</h5>
+                            <p class="text-muted">Custom progress bars with pill shape</p>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Primary Progress Bar</label>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Secondary Progress Bar</label>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Animated Progress Bar</label>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Card Examples</h5>
+                            <p class="text-muted">Cards with custom border-radius and hover effects</p>
+                            
+                            <div class="card border-primary mb-3">
+                                <div class="card-header bg-primary bg-opacity-10 border-primary-subtle">
+                                    <h6 class="mb-0">Primary Card</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">This card has a primary border and subtle header background.</p>
+                                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                                </div>
+                            </div>
+                            
+                            <div class="card border-secondary">
+                                <div class="card-header bg-secondary bg-opacity-10 border-secondary-subtle">
+                                    <h6 class="mb-0">Secondary Card</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">This card has a secondary border and subtle header background.</p>
+                                    <a href="#" class="btn btn-secondary btn-sm">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Variables Summary -->
+        <section class="mb-5">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">CSS Variables Customized</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Color Variables:</h6>
+                            <ul class="list-unstyled">
+                                <li><code>--bs-primary: #20c997;</code> (Teal)</li>
+                                <li><code>--bs-secondary: #ff6b6b;</code> (Coral)</li>
+                                <li><code>--bs-success: #9c27b0;</code> (Purple)</li>
+                                <li><code>--bs-info: #2196f3;</code> (Deep Blue)</li>
+                                <li><code>--bs-warning: #ff9800;</code> (Amber)</li>
+                                <li><code>--bs-danger: #ff5722;</code> (Deep Orange)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Other Variables:</h6>
+                            <ul class="list-unstyled">
+                                <li><code>--bs-border-radius: 0.75rem;</code></li>
+                                <li><code>--bs-btn-border-radius: 0.75rem;</code></li>
+                                <li><code>--bs-btn-padding-x: 1.5rem;</code></li>
+                                <li><code>--bs-btn-font-weight: 600;</code></li>
+                                <li><code>--bs-box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);</code></li>
+                                <li><code>--bs-font-sans-serif: 'Segoe UI', system-ui;</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-muted"><strong>Note:</strong> All Bootstrap components automatically use these custom variables. No additional classes or inline styles needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Custom Bootstrap Demo</h5>
+                    <p class="text-light">This page demonstrates how to customize Bootstrap 5 using CSS variables.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex flex-wrap justify-content-md-end gap-3">
+                        <a href="#" class="btn btn-outline-light btn-sm">GitHub</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Documentation</a>
+                        <a href="#" class="btn btn-primary btn-sm">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 pt-3 border-top border-secondary">
+                <p class="mb-0 text-light">Made with customized Bootstrap 5 using CSS Variables</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <script>
+        // Simple script to demonstrate interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update range value display
+            const rangeInput = document.getElementById('formRange');
+            if (rangeInput) {
+                rangeInput.addEventListener('input', function() {
+                    // In a real implementation, you might update a display element
+                    console.log('Range value:', this.value);
+                });
+            }
+            
+            // Add click event to all buttons for demonstration
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.classList.contains('disabled')) {
+                        console.log(`Clicked ${this.textContent.trim()} button`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

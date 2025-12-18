@@ -1,0 +1,90 @@
+/* full layout styling */
+body {
+    font-family: Arial, sans-serif;
+    background:#61a3cc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.title {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: 22px;
+    border-bottom: 2px solid #61a3cc;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* LEFT PANEL */
+.left-side {
+    width: 55%;
+}
+
+.address-text {
+    margin: 10px 0;
+}
+
+.info .item {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    text-transform: capitalize;
+    border-radius: 4px;
+}
+
+.textarea {
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background: #d34255;
+    color: #fff;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #bf3044;
+}
+
+/* RIGHT PANEL */
+.right-side {
+    width: 40%;
+    height: 330px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

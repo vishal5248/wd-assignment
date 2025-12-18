@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Checker</h1>
+        <p>Type your password to check if it's weak, medium or strong</p>
+        
+        <div class="password-box">
+            <label for="password">Enter Password:</label>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Type your password">
+                <button id="showPassword">Show</button>
+            </div>
+        </div>
+        
+        <div class="strength-meter">
+            <div class="meter-bar">
+                <div class="meter-fill" id="meterFill"></div>
+            </div>
+            <div class="strength-text" id="strengthText">No Password Entered</div>
+        </div>
+        
+        <div class="requirements">
+            <h3>Password Requirements:</h3>
+            <ul>
+                <li id="req1">✓ At least 8 characters</li>
+                <li id="req2">✓ Contains lowercase letter</li>
+                <li id="req3">✓ Contains uppercase letter</li>
+                <li id="req4">✓ Contains number</li>
+                <li id="req5">✓ Contains special character (!@#$%^&*)</li>
+            </ul>
+        </div>
+        
+        <div class="examples">
+            <h3>Try these examples:</h3>
+            <div class="example-buttons">
+                <button onclick="testPassword('password')">Weak: "password"</button>
+                <button onclick="testPassword('Password123')">Medium: "Password123"</button>
+                <button onclick="testPassword('P@ssw0rd!2023')">Strong: "P@ssw0rd!2023"</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="passChecker.jquery.js"></script>
+    
+    <script>
+        function testPassword(pass) {
+            $('#password').val(pass).keyup();
+        }
+    </script>
+</body>
+</html>

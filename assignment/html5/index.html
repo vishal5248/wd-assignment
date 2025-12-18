@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>contact us</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h2 class="title">contact us</h2>
+
+        <div class="contact-box">
+
+            <div class="left-side">
+
+                <h3>address :</h3>
+                <p class="address-text">
+                    saint marco street, 6th floor, tokyo, japan, 123456.
+                </p>
+
+                <div class="info">
+                    <p class="item"><span>📞</span> +91 1234567890</p>
+                    <p class="item"><span>📧</span> example@gmail.com</p>
+                    <p class="item"><span>📍</span> location</p>
+                </div>
+
+                <!-- contact form -->
+                <form id="contact-form">
+
+                    <div class="form-row">
+                        <input type="text" id="name" class="input" placeholder="name" autocomplete="off">
+                        <input type="text" id="company" class="input" placeholder="company" autocomplete="off">
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" id="email" class="input" placeholder="email" autocomplete="off">
+                        <input type="text" id="mobile" class="input" placeholder="mobile" autocomplete="off">
+                    </div>
+
+                    <textarea id="message" class="textarea" placeholder="message"></textarea>
+
+                    <button type="submit" class="btn">send</button>
+
+                </form>
+
+            </div>
+
+            <div class="right-side">
+                <!-- google map embedded -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9918.483799538282!2d-0.13049062319604577!3d51.51830389716805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b335b0e7545%3A0xeca73e0bd7cdcb0!2sLondon%20WC1E%207HU%2C%20UK!5e0!3m2!1sen!2sin!4v1703749931554"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // -----------------------------
+        // FORM VALIDATION LOGIC
+        // -----------------------------
+
+        const form = document.getElementById("contact-form");
+
+        form.addEventListener("submit", function(e) {
+
+            // prevent empty form submission
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const msg = document.getElementById("message").value.trim();
+
+            // NAME VALIDATION — only alphabets, min 3 max 6 chars
+            const namePattern = /^[a-zA-Z]{3,6}$/;
+            if (!namePattern.test(name)) {
+                alert("Name must contain only alphabets and be 3–6 characters long.");
+                return;
+            }
+
+            // MOBILE VALIDATION — only digits, exactly 10 digits
+            const mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits.");
+                return;
+            }
+
+            // check if other fields are empty
+            if (email === "" || msg === "") {
+                alert("All fields are required.");
+                return;
+            }
+
+            alert("Form submitted successfully!");
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>

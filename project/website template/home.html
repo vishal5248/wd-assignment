@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>beauty parlor</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="cdnjs.cloudflare.com">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header-bar">
+      <!-- first section -->
+      <div class="ticker header-text" id="ticker">
+        <div class="list" id="list">FREE EXPRESS SHIPPING</div>
+      </div>
+
+      <!-- search -->
+      <div class="search-container">
+        <span class="left-icon">&#x1F50E;&#xFE0E;</span>
+        <input type="text" placeholder="Search..." id="search" oninput="clearBtn1()">
+        <span class="right-icon" onclick="clearSearch()" id="clearbtn">&#x2715;</span>
+      </div>
+
+      <!-- icons + login + button -->
+      <div class="icon-book">
+        <div class="facebook-bar">
+          <img src="icon/facebook.png">
+        </div>
+        <div class="instagram">
+          <img src="icon/instagram.png">
+        </div>
+
+        <div class="login-bar">
+          <img src="icon/login.png">
+          <!-- <span>log in</span> -->
+        </div>
+
+        <button class="bookappointment">
+          book appointment
+        </button>
+      </div>
+    </header>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="website-logo">
+        <img src="image/logo.png">
+        <h3 class="logoname">
+          <span class="logo-name">Evita beauty </span>
+          <span class="logo-name1">Salon</span>
+        </h3>
+      </div>
+      <span class="openBtn" onclick="openMenu()">&#9776</span>
+      <span class="closeBtn" onclick="closeMenu()">&#9746</span>
+      <ul class="navbar-menu" id="menu">
+        <li><a href="home.html" class="nav-link active">home</a></li>
+        <li><a href="services.html"   class="nav-link">services</a></li>
+        <li><a href="bridal.html"  class="nav-link">bridal</a></li>
+        <li><a href="courses.html"  class="nav-link">Courses</a></li>
+        <li><a href="appoinment.html"  class="nav-link">fix an appointment</a></li>
+        <li><a href="contact.html"  class="nav-link">contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- slider -->
+    <div class="slide-container">
+      <div class="slider-contain">
+
+        <button class="arrow left" id="next">&#10094;</button>
+        <button class="arrow right" id="prev">&#10095;</button>
+
+        <div class="slider" id="slider">
+          <div class="slide">
+            <img src="slide_image/1.webp" alt="abc">
+          </div>
+          <div class="slide">
+            <img src="slide_image/2.webp" alt="">
+          </div>
+          <div class="slide">
+            <img src="slide_image/4.webp" alt="">
+          </div>
+          <div class="slide">
+            <img src="slide_image/5.webp" alt="">
+          </div>
+          <div class="slide">
+            <img src="slide_image/8.webp" alt="">
+          </div>
+        </div>
+      </div>
+      
+
+      <div>
+        <div class="bottom">
+          <!-- dots JS se aayenge -->
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- //report next code -->
+
+
+      <div class="report">
+        <h4>Achievements so far</h4>
+
+        <div class="report-mini">
+
+          <!-- 1 -->
+          <div>
+            <div class="image">
+              <img src="icon/girl.webp">
+            </div>
+
+            <div class="report-contect">
+              <span class="text">7000+</span>
+              <span>Professionals</span>
+            </div>
+
+          </div>
+
+          <!-- 2 -->
+          <div>
+
+            <div class="image">
+              <img src="icon/download.webp">
+            </div>
+
+            <div class="report-contect">
+              <span class="text">8M+</span>
+              <span>App Download</span>
+            </div>
+
+          </div>
+
+          <!-- 3 -->
+          <div>
+
+            <div class="image">
+              <img src="icon/booking.webp">
+            </div>
+
+            <div class="report-contect">
+              <span class="text">9M+</span>
+              <span>Bookings Completed</span>
+            </div>
+
+          </div>
+
+          <!-- 4 -->
+          <div>
+            <div class="image">
+              <img src="icon/cities.webp">
+            </div>
+            <div class="report-contect">
+              <span class="text">50+</span>
+              <span>Cities in India</span>
+            </div>
+          </div>
+
+          <!-- 5 (FIXED) -->
+          <div>
+
+            <div class="image">
+              <img src="icon/rated.webp">
+            </div>
+
+            <div class="report-contect">
+              <span class="text">4.8 ★</span>
+              <span>India's Top Rated Beauty App</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- iska css Best Beauty Salon in Ahmedabad -->
+
+      <div class="information">
+        <div class="information-bar">
+
+
+
+          <div class="information-bar-text info-bar info-left">
+            <h2 class="title">Best Beauty Salon <span>in Ahmedabad</span></h2>
+            <hr class="line">
+            <h4 class="title2">Unmatched Beauty Parlour Services</h4>
+            <hr class="line2">
+            <p>
+              Welcome to Angel Salon, A best beauty salon in Ahmedabad, Gujarat. With over 25 years of experience, we
+              offer wide range of beauty parlour services for your hair, skin, nails and also bridal makeup for your
+              special day. Our group is devoted to improving your herbal beauty, offering tailored answers that mirror
+              your individuality and leave a long-lasting effect. Our services are highly appreciated. If you are
+              searching for the best beauty parlour in Ahmedabad, check no further 'Visit Angel as Ahmedabad's best
+              beauty parlour.
+            </p>
+            <button class="readme"> read more
+            </button>
+          </div>
+
+          <div class="image-bar-info info-bar">
+            <img src="slide_image/1.png">
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- i want to add to contect -->
+
+
+      <div class="service">
+        <h2>Services we offer
+        </h2>
+        <div class="service-bar">
+          <div class="first-service service-bar1">
+            <img src="image/salon-at-home.webp" alt="service">
+            <h3>Female Salon at Home</h3>
+            <p>We provide a range of beauty services at the comfort of your home. From waxing, facials, clean-ups and
+              mani-pedi to body polishing and even hair spa, you name it we have it.</p>
+          </div>
+
+          <div class="second-service service-bar1">
+            <img src="image/spa-at-home.webp" alt="service">
+            <h3>Female Salon at Home</h3>
+            <p>We provide a range of beauty services at the comfort of your home. From waxing, facials, clean-ups and
+              mani-pedi to body polishing and even hair spa, you name it we have it.</p>
+          </div>
+
+          <div class="third-service service-bar1">
+            <img src="image/hydraLaser.webp" alt="service">
+            <h3>Female Salon Home</h3>
+            <p>We provide a range of beauty services at the comfort of your home. From waxing, facials, clean-ups and
+              mani-pedi to body polishing and even hair spa, you name it we have it.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mini-service">
+        <div class="mini-service-bar">
+
+          <div class="first-mini-service">
+            <img src="service-image/hair-services.webp">
+            <h3>Hair Services</h3>
+          </div>
+
+          <div class="first-mini-service">
+            <img src="service-image/make-up (1).webp">
+            <h3>Makeup Home</h3>
+          </div>
+
+
+          <div class="first-mini-service">
+            <img src="service-image/male-spa.webp">
+            <h3>Male Spa</h3>
+          </div>
+
+
+          <div class="first-mini-service">
+            <img src="service-image/male-grooming.webp">
+            <h3>Male Grooming</h3>
+          </div>
+
+
+          <div class="first-mini-service">
+            <img src="service-image/pre-bridal.webp">
+            <h3>Pre-Bridal</h3>
+          </div>
+
+
+          <div class="first-mini-service">
+            <img src="service-image/mehndi.webp">
+            <h3>Mehandi Home </h3>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="salon">
+        <div class="salon-bar">
+
+          <div class="salon-bar-context">
+            <h1>Evita beauty <span>Salon</span></h1>
+
+            <p>
+              It has always been you inviting us to your house. It is time for us to invite you to our place. Visit our
+              first-ever smart-tech unisex salons in Delhi-NCR and get a luxurious pampering experience. From Hair Wash,
+              Hair Spa & Makeup to Advance LED Facials, Spa and Steam Bath everything is available at the most
+              affordable prices at a smart-salon near you
+            </p>
+            <button class="explore">Explore Now</button>
+          </div>
+
+
+              <div class="media-trap">
+                <div class="salon-video">
+                  <video autoplay muted>
+                    <source src="video/about-us-ym-salon.mp4" type="video/mp4">
+
+                  </video>
+                </div>
+              </div>
+
+            </div>
+            </div>
+
+            <!-- //over catelog -->
+             <div class="header-text1">
+               <h4>our catelog</h4><hr class="line3">
+             </div>
+            
+             <div class="section-catelog">
+            
+              <div class="catelog-bar">
+                
+                <div class="catelog-text">
+                  <h4>Comprehensive Service <span>with Best Beauty Salon</span></h4>
+                  <p>We offer a complete range of beauty salon services, from hair styling and nail extensions to rejuvenating facial services and expert skin consultations. Our method is centered around knowing your specific wishes and alternatives, providing services in best pricing with great discounts.</p>
+
+                  <p>Whether you’re attempting to find a beauty salon near me or want best beauty salon in Ahmedabad, Angel delivers unmatched results with best services.</p>
+
+                  <button class="read-more-catelog">read more</button>
+
+                </div>
+
+                <div class="image-catelog">
+                  <img src="image/2-1.png">
+                </div>
+                
+
+              </div>
+             </div>
+
+             <!-- Our Beauty Parlour Can Offer You -->
+
+             <div class="background-image">
+
+             <div class="offer-text-bar">
+              <h4 class="offer-text">Our Beauty Parlour Can Offer You</h4><hr class="offer-line">
+             </div>
+             <div class="wrap">
+             <div class="offer-service">
+              
+
+
+                <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/serum.png" alt="facial">
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+
+                 <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/nail.png">
+
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+
+                 <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/makeup.png">
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+
+                 <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/hair-dye.png">
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+
+                 <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/group.png">
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+
+                 <div class="offer-service-bar-box">
+                  <div class="offer-service-img">
+                    <img src="icon-facial/facial (1).png">
+                  </div>
+
+                  <div class="offer-service-text">
+                    <h3>Facial</h3>
+                    <p>Indulge in rejuvenating facials for radiant, glowing skin.</p>
+                  </div>
+
+                </div>
+
+            
+             </div>
+             </div>
+            </div>
+
+
+
+
+           <!-- CHOOSE OUR BEAUTY SALON SECTION -->
+<div class="information choose-section">
+  <div class="information-bar">
+
+    <!-- LEFT IMAGE WITH CURVE & DECORATION -->
+    <div class="image-bar-info info-bar choose-img-box">
+      <div class="choose-decor"></div>
+      <div class="choose-strokes">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="choose-image">
+        <img src="background-image/125.png" alt="Makeup Model">
+      </div>
+    </div>
+
+    <!-- RIGHT TEXT SECTION -->
+    <div class="information-bar-text info-bar info-left choose-text-content">
+
+      <h2 class="title choose-title">
+        Choose Our <span>Beauty Salon</span>
+      </h2>
+
+      <div class="choose-list">
+
+        <div class="choose-item">
+          <div class="choose-icon">✔</div>
+          <div>
+            <h3>Expertise You Can Trust</h3>
+            <p>With 25 years of experience and top makeup artists, we ensure the highest quality beauty services.</p>
+          </div>
+        </div>
+
+        <div class="choose-item">
+          <div class="choose-icon">✔</div>
+          <div>
+            <h3>Personalized Beauty Solutions</h3>
+            <p>We provide fully customized beauty solutions designed to meet your unique needs.</p>
+          </div>
+        </div>
+
+        <div class="choose-item">
+          <div class="choose-icon">✔</div>
+          <div>
+            <h3>Commitment to Quality</h3>
+            <p>We use only premium beauty products to give you a luxurious and satisfying experience.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- BEAUTY PACKAGE SECTION -->
+ 
+<!-- Beauty Parlour Package Overview -->
+
+<div class="package-section">
+  <div class="hr-pack-line">
+    <h2 class="package-heading">
+        Beauty Parlour Package <span>Overview</span>
+    </h2><hr class="pack-line"></div>
+
+    <div class="package-box-wrapper">
+
+        <!-- BASIC PACKAGE -->
+        <div class="package-box">
+            <h3 class="pkg-price">Rs.3000</h3>
+            <h4 class="pkg-title">Basic</h4>
+
+            <ul class="pkg-list">
+                <li>HD Makeup</li>
+                <li>(Pse, LA Girl)</li>
+                <li>Simple eyes</li>
+                <li>
+                    Open Hair Ironing or Simple Curl,  
+                    Waterfall, Twist, French Braid
+                </li>
+            </ul>
+        </div>
+
+        <!-- STANDARD PACKAGE -->
+        <div class="package-box">
+            <h3 class="pkg-price">Rs.5000</h3>
+            <h4 class="pkg-title">Standard</h4>
+
+            <ul class="pkg-list">
+                <li>HD Makeup (Two Face, Mac, Nars, HudaBeauty)</li>
+                <li>
+                    Eyes variation (smoke, glitter, shimmer, eyelashes)
+                </li>
+                <li>Open Hair curls variation with extension</li>
+                <li>
+                    Trending Front Braids / Messy Hairstyle  
+                    Hair Accessories & Draping
+                </li>
+            </ul>
+        </div>
+
+        <!-- PREMIUM PACKAGE -->
+        <div class="package-box">
+            <h3 class="pkg-price">Rs.7000</h3>
+            <h4 class="pkg-title">Premium</h4>
+
+            <ul class="pkg-list">
+                <li>HD Makeup (Nars, Dior, Tarte)</li>
+                <li>
+                    Eyes variation (smoke, glitter, shimmer, eyelashes)
+                </li>
+                <li>Open Hair curls variation with extension</li>
+                <li>
+                    Trending Braids / Messy Hairstyle  
+                    Hair Accessories & Draping
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <p class="package-bottom-text">
+        Are you looking for best beauty parlour in Ahmedabad for your bridal makeup? 
+        Our bridal packages are designed to give you everything from makeup & hairstyling 
+        to skincare & spa treatments. Whether you need simple or premium bridal package, 
+        we’ve got you covered.
+    </p>
+
+    <div class="package-btn-box">
+        <button class="package-btn">CONTACT US</button>
+    </div>
+</div>
+
+
+<!-- //START: Unwind Best Beauty Parlour Services -->
+<!-- //UNWIND SECTION (ALL NEW CLASS NAMES) -->
+<section class="unwind-wrapper">
+    <div class="unwind-container">
+
+        <!-- LEFT TEXT -->
+        <div class="unwind-textbox">
+            <h2 class="unwind-heading">
+                Unwind Best <span>Beauty</span> <br>
+                Parlour Services
+            </h2>
+
+            <p class="unwind-description">
+                At Angel Salon, we provide more significance than just beauty – we enjoy 
+                relaxation and renewal. Our beauty salon services help you unwind, while 
+                our personalized beauty parlour artist and treatments deal with your body 
+                and skin issues, leaving you with sparkling, radiant skin. Whether you want 
+                a beauty salon or a full beauty parlour service in Ahmedabad, our beauty 
+                parlour artists are here to guide you. Visit here and rejuvenate with us.
+            </p>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="unwind-imagebox">
+            <div class="unwind-circle"></div>
+
+            <div class="unwind-strokes">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="unwind-photo">
+                <img src="image/beauty-popup.jpg" alt="Facial Treatment">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- // card slider -->
+
+<div class="celeb-wrap">
+  <h2 class="celeb-title">Celebrities Love Us</h2>
+
+  <div class="celeb-slider" aria-label="Celebrity testimonials slider">
+    <button class="celeb-nav left" aria-label="Previous" id="prevBtn">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="celeb-track" id="track">
+      
+      <div class="celeb-card" data-index="0">
+        <div class="celeb-media kavita">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>KAVITA KAUSHIK</h4>
+              <p>On Vocal For Local</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="celeb-card" data-index="1">
+        <div class="celeb-media gauhar">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>GAUHAR KHAN</h4>
+              <p>On Affordable RICA Waxing at Home!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="celeb-card" data-index="2">
+        <div class="celeb-media hina">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>HINA KHAN</h4>
+              <p>On Her Facial at Home Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="celeb-card" data-index="3">
+        <div class="celeb-media pooja">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>POOJA BHATT</h4>
+              <p>On Hair Styling Solutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="celeb-card" data-index="4">
+        <div class="celeb-media shilpa">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>SHILPA SHETTY</h4>
+              <p>On Yoga & Wellness Journey</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 - KRITI SANON -->
+      <div class="celeb-card" data-index="5">
+        <div class="celeb-media kriti">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>KRITI SANON</h4>
+              <p>On Skincare Routine</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7 - ALIA BHATT -->
+      <div class="celeb-card" data-index="6">
+        <div class="celeb-media alia">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>ALIA BHATT</h4>
+              <p>On Sustainable Beauty Choices</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8 - DEEPIKA PADUKONE -->
+      <div class="celeb-card" data-index="7">
+        <div class="celeb-media deepika">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>DEEPIKA PADUKONE</h4>
+              <p>On Mental Health Advocacy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9 - KIARA ADVANI -->
+      <div class="celeb-card" data-index="8">
+        <div class="celeb-media kiara">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>KIARA ADVANI</h4>
+              <p>On Fitness Regimen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10 - ANANYA PANDAY -->
+      <div class="celeb-card" data-index="9">
+        <div class="celeb-media ananya">
+          <div class="play-btn" role="button" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </div>
+          <div class="celeb-overlay">
+            <div class="celeb-name">
+              <h4>ANANYA PANDAY</h4>
+              <p>On Youth Empowerment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Clones will be added by JavaScript -->
+    </div>
+
+    <button class="celeb-nav right" aria-label="Next" id="nextBtn">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+
+  
+
+  
+</div>
+
+
+<footer class="evita-footer" id="evita-footer">
+  <div class="footer-inner">
+    <div class="footer-col about">
+      <h3>About Us</h3>
+      <p class="about-text">
+        With over 25 years of experience, we are dedicated to enhancing your natural beauty through expert makeup and hairstyling. Our passion for creating stunning looks combined with our commitment to using high-quality products ensures that you feel confident and radiant on every occasion.
+      </p>
+      <button class="btn-read" id="readMoreBtn" aria-expanded="false">READ MORE</button>
+    </div>
+
+    <div class="footer-col links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#home">Home</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#about">About Us</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#contact">Contact us</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#academy">Academy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col services">
+      <h3>Our Services</h3>
+      <ul>
+        <li><i class="fa-solid fa-angle-right"></i> Hair Services</li>
+        <li><i class="fa-solid fa-angle-right"></i> Skin Services</li>
+        <li><i class="fa-solid fa-angle-right"></i> Nail Services</li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact">
+      <h3>Reach out to us</h3>
+      <address class="contact-info">
+        <p><i class="fa-solid fa-location-dot"></i> Shop no.305 ETC, Vandemataram Rd, above pantaloons showroom, Janta Nagar, Gota, Ahmedabad, Gujarat 382481</p>
+        <p><i class="fa-regular fa-envelope"></i> <a href="mailto:info@angletheSpalon.com">info@angletheSpalon.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919426315923">(+91) 94263 15923</a></p>
+      </address>
+
+      <div class="socials" aria-label="social links">
+        <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="divider" role="separator" aria-hidden="true"></div>
+    <div class="copyright">© Copyright <span id="year"></span> angletheSpalon. All Rights Reserved.</div>
+  </div>
+
+  <!-- back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+
+
+
+
+
+          </div> <!-- main body close -->
+        
+          <script src="my_script.js"></script>
+
+          <script>
+
+          </script>
+</body>
+
+</html>

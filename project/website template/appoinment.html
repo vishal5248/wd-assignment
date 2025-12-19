@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="cdnjs.cloudflare.com">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container"  >
+
+    <header class="header-bar">
+      <!-- first section -->
+      <div class="ticker header-text" id="ticker">
+        <div class="list" id="list">FREE EXPRESS SHIPPING</div>
+      </div>
+
+      <!-- search -->
+      <div class="search-container">
+        <span class="left-icon">&#x1F50E;&#xFE0E;</span>
+        <input type="text" placeholder="Search..." id="search" oninput="clearBtn1()">
+        <span class="right-icon" onclick="clearSearch()" id="clearbtn">&#x2715;</span>
+      </div>
+
+      <!-- icons + login + button -->
+      <div class="icon-book">
+        <div class="facebook-bar">
+          <img src="icon/facebook.png">
+        </div>
+        <div class="instagram">
+          <img src="icon/instagram.png">
+        </div>
+
+        <div class="login-bar">
+          <img src="icon/login.png">
+          <!-- <span>log in</span> -->
+        </div>
+
+        <button class="bookappointment">
+          book appointment
+        </button>
+      </div>
+    </header>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="website-logo">
+        <img src="image/logo.png">
+        <h3 class="logoname">
+          <span class="logo-name">Evita beauty </span>
+          <span class="logo-name1">Salon</span>
+        </h3>
+      </div>
+      <span class="openBtn" onclick="openMenu()">&#9776</span>
+      <span class="closeBtn" onclick="closeMenu()">&#9746</span>
+      <ul class="navbar-menu" id="menu">
+      <li><a href="home.html">home</a></li>
+        <li class="mainhome"><a href="home.html">home</a></li>
+        <li><a href="services.html"   class="nav-link">services</a></li>
+        <li><a href="bridal.html"  class="nav-link">bridal</a></li>
+        <li><a href="courses.html"  class="nav-link">Courses</a></li>
+        <li><a href="appoinment.html"  class="nav-link active">fix an appointment</a></li>
+        <li><a href="contact.html"  class="nav-link">contact us</a></li>
+      </ul>
+    </nav>
+<!-- //baner contect -->
+   
+<section class="hero-wrap hero-wrap1">
+  <div class="hero-shade"></div>
+
+  <div class="hero-inner">
+    <h1 class="hero-title"> book Appointment</h1>
+    <div class="hero-path">
+      <!-- <span>HOME</span> <em>/</em> <span>ACADEMY</span> -->
+    </div>
+  </div>
+</section>
+
+
+<section class="academy-wrap">
+  <div class="academy-text">
+    <p>
+      Are you looking for a best beauty parlour course in Ahmedabad? Then contact
+      Angle Salon Academy as we offer wide range of makeup artist course in Ahmedabad.
+      At our academy, we are dedicated to transforming your dreams into reality with
+      top-tier education and hands-on training. You can choose among many top beauty
+      programs of hair cutting, skin, nail art, spa, salon and many other courses.
+    </p>
+
+    <a href="#" class="academy-btn">CONTACT US</a>
+  </div>
+</section>
+
+<section class="laser-wrapper">
+
+  <!-- LEFT FORM -->
+  <div class="form-box">
+    <h3>I'd like to book an</h3>
+    <h2>APPOINTMENT</h2>
+
+    <form id="appointmentForm">
+
+      <input type="text" id="name" placeholder="Enter Your Name*" />
+
+      <div class="gender-row">
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+
+      <div class="two-inputs">
+        <input type="text" id="contact" placeholder="Enter Contact No*" />
+        <input type="email" id="email" placeholder="Enter Your Email" />
+      </div>
+
+      <select id="service">
+        <option value="">Select Service</option>
+        <option>Laser Hair Removal</option>
+        <option>Facial</option>
+        <option>Skin Treatment</option>
+      </select>
+
+      <select id="city">
+        <option value="">Select Your City</option>
+        <option>Ahmedabad</option>
+        <option>Surat</option>
+        <option>Vadodara</option>
+      </select>
+
+      <select id="area">
+        <option value="">Select Area</option>
+        <option>CG Road</option>
+        <option>Maninagar</option>
+        <option>Bopal</option>
+      </select>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="terms">
+        <label for="terms">I have read & agreed to the T&C and the privacy policy</label>
+      </div>
+
+      <button type="submit">Submit</button>
+
+      <p class="note">
+        *Limited period offer. Terms & Conditions apply. Result may vary from person to person.
+      </p>
+
+    </form>
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="content-box">
+    <h2>Why Full Body Laser Hair Removal Treatment?</h2>
+
+    <p>
+      Tired of the hassle of constant shaving or painful waxing? Say goodbye to unwanted hair
+      with VLCC’s Full Body Laser Hair Removal Treatment. This advanced, US-FDA-approved
+      procedure offers a permanent solution by targeting hair follicles to prevent regrowth,
+      leaving your skin soft, smooth, and care-free.
+    </p>
+
+    <p>
+      Whether you’re prepping for the festive season or getting summer-ready, this treatment
+      offers a convenient and time-saving alternative to traditional methods.
+    </p>
+
+    <h3>What are the benefits?</h3>
+
+    <ul>
+      <li><strong>Permanent Solution:</strong> Targets hair follicles to prevent regrowth.</li>
+      <li><strong>Painless and Safe:</strong> Advanced, pain-free technology.</li>
+      <li><strong>Save Time:</strong> Over 100 hours saved vs waxing or shaving.</li>
+      <li><strong>Smooth Skin Always:</strong> No cuts or irritation.</li>
+      <li><strong>Cost-Effective:</strong> Long-lasting results.</li>
+    </ul>
+
+    <h3>WHY SHOULD YOU CHOOSE VLCC PERMANENT HAIR REDUCTION TREATMENT?</h3>
+
+    <p>
+      Experience pain-free hair removal without skin sensitivity. Our advanced laser technology
+      is gentle and effective across all areas including face, legs, arms, back and underarms.
+    </p>
+
+    <p>
+      Laser pulses take only a fraction of a second and can treat multiple hairs simultaneously.
+      Small areas can be treated in minutes, while larger areas take about an hour.
+    </p>
+  </div>
+
+</section>
+
+<footer class="evita-footer" id="evita-footer">
+  <div class="footer-inner">
+    <div class="footer-col about">
+      <h3>About Us</h3>
+      <p class="about-text">
+        With over 25 years of experience, we are dedicated to enhancing your natural beauty through expert makeup and hairstyling. Our passion for creating stunning looks combined with our commitment to using high-quality products ensures that you feel confident and radiant on every occasion.
+      </p>
+      <button class="btn-read" id="readMoreBtn" aria-expanded="false">READ MORE</button>
+    </div>
+
+    <div class="footer-col links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#home">Home</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#about">About Us</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#contact">Contact us</a></li>
+        <li><i class="fa-solid fa-angle-right"></i> <a href="#academy">Academy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col services">
+      <h3>Our Services</h3>
+      <ul>
+        <li><i class="fa-solid fa-angle-right"></i> Hair Services</li>
+        <li><i class="fa-solid fa-angle-right"></i> Skin Services</li>
+        <li><i class="fa-solid fa-angle-right"></i> Nail Services</li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact">
+      <h3>Reach out to us</h3>
+      <address class="contact-info">
+        <p><i class="fa-solid fa-location-dot"></i> Shop no.305 ETC, Vandemataram Rd, above pantaloons showroom, Janta Nagar, Gota, Ahmedabad, Gujarat 382481</p>
+        <p><i class="fa-regular fa-envelope"></i> <a href="mailto:info@angletheSpalon.com">info@angletheSpalon.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919426315923">(+91) 94263 15923</a></p>
+      </address>
+
+      <div class="socials" aria-label="social links">
+        <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="divider" role="separator" aria-hidden="true"></div>
+    <div class="copyright">© Copyright <span id="year"></span> angletheSpalon. All Rights Reserved.</div>
+  </div>
+
+  <!-- back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+
+
+</div>
+<script src="courses.js"></script>
+</body>
+</html>

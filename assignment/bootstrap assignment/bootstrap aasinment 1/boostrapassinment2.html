@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #ff6b6b;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-section h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a41b5;
+            border-color: #3a41b5;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .contact-form {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .skill-badge {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .modal-content {
+            border-radius: 10px;
+        }
+        
+        .portfolio-actions {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .empty-portfolio {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            border: 2px dashed #ccc;
+        }
+        
+        .empty-portfolio i {
+            font-size: 4rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-code-slash me-2"></i>DevPortfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#add-portfolio">Add Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Hi, I'm Alex Morgan</h1>
+                    <p class="lead">A passionate Frontend Developer & UI/UX Designer with 5+ years of experience creating beautiful, functional websites and applications.</p>
+                    <div class="mt-4">
+                        <a href="#portfolio" class="btn btn-light btn-lg me-2">
+                            <i class="bi bi-briefcase me-1"></i> View Portfolio
+                        </a>
+                        <a href="#add-portfolio" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-plus-circle me-1"></i> Add Project
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         class="img-fluid rounded-circle shadow" 
+                         alt="Profile Image" 
+                         style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title mb-0">My Portfolio</h2>
+                <div>
+                    <span class="badge bg-primary fs-6" id="portfolio-count">6 Projects</span>
+                </div>
+            </div>
+            <p class="text-muted mb-4">Here are my projects showcasing my skills in web development and design.</p>
+            
+            <!-- Portfolio Actions -->
+            <div class="portfolio-actions mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h5>Manage Your Portfolio</h5>
+                        <p class="text-muted mb-0">Add, view, and manage your portfolio items</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addPortfolioModal">
+                            <i class="bi bi-plus-circle me-1"></i> Add New Project
+                        </button>
+                        <button class="btn btn-outline-primary" onclick="toggleViewMode()" id="view-toggle">
+                            <i class="bi bi-grid-3x3-gap me-1"></i> Grid View
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="row g-4" id="portfolio-container">
+                <!-- Portfolio items will be dynamically loaded here -->
+            </div>
+            
+            <!-- Empty Portfolio Message (Initially hidden) -->
+            <div class="empty-portfolio d-none" id="empty-portfolio">
+                <i class="bi bi-folder-x"></i>
+                <h4>No Portfolio Items Yet</h4>
+                <p class="text-muted">Your portfolio is empty. Click the "Add New Project" button to add your first project.</p>
+                <button class="btn btn-primary btn-lg mt-2" data-bs-toggle="modal" data-bs-target="#addPortfolioModal">
+                    <i class="bi bi-plus-circle me-1"></i> Add Your First Project
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Portfolio Section -->
+    <section id="add-portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Add Portfolio Item</h2>
+            <p class="text-muted mb-4">Use the form below to add a new project to your portfolio.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-form">
+                        <form id="addPortfolioForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="projectTitle" class="form-label">Project Title *</label>
+                                    <input type="text" class="form-control" id="projectTitle" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="projectCategory" class="form-label">Project Category *</label>
+                                    <select class="form-select" id="projectCategory" required>
+                                        <option value="" selected disabled>Select category</option>
+                                        <option value="web-development">Web Development</option>
+                                        <option value="mobile-app">Mobile App</option>
+                                        <option value="ui-ux">UI/UX Design</option>
+                                        <option value="e-commerce">E-commerce</option>
+                                        <option value="dashboard">Dashboard</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="projectDescription" class="form-label">Project Description *</label>
+                                <textarea class="form-control" id="projectDescription" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="projectImage" class="form-label">Project Image URL *</label>
+                                <input type="url" class="form-control" id="projectImage" required>
+                                <div class="form-text">Enter a valid image URL. You can use Unsplash images like: https://images.unsplash.com/photo-1551650975-87deedd944c3</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="projectTechnologies" class="form-label">Technologies Used *</label>
+                                <input type="text" class="form-control" id="projectTechnologies" required>
+                                <div class="form-text">Separate technologies with commas (e.g., React, Node.js, MongoDB)</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="projectLink" class="form-label">Project Link (Optional)</label>
+                                <input type="url" class="form-control" id="projectLink">
+                            </div>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="reset" class="btn btn-outline-secondary me-md-2">
+                                    <i class="bi bi-arrow-clockwise me-1"></i> Clear Form
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-plus-circle me-1"></i> Add to Portfolio
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <p class="text-muted mb-4">I specialize in frontend development with strong backend knowledge and UI/UX design principles.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">Frontend Development</h5>
+                    <div class="mb-4">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript (ES6+)</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Vue.js</span>
+                        <span class="skill-badge">Angular</span>
+                        <span class="skill-badge">Bootstrap</span>
+                        <span class="skill-badge">Sass/SCSS</span>
+                    </div>
+                    
+                    <h5 class="mb-3">UI/UX Design</h5>
+                    <div class="mb-4">
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">Adobe XD</span>
+                        <span class="skill-badge">Sketch</span>
+                        <span class="skill-badge">Wireframing</span>
+                        <span class="skill-badge">Prototyping</span>
+                        <span class="skill-badge">User Research</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="mb-3">Backend Development</h5>
+                    <div class="mb-4">
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Express</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">Firebase</span>
+                        <span class="skill-badge">REST APIs</span>
+                    </div>
+                    
+                    <h5 class="mb-3">Tools & Others</h5>
+                    <div class="mb-4">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Webpack</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Agile/Scrum</span>
+                        <span class="skill-badge">Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="text-muted mb-4">Have a project in mind? Feel free to contact me using the form below.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="" selected disabled>Select a subject</option>
+                                    <option value="project">Project Inquiry</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="freelance">Freelance Work</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">Subscribe to my newsletter for updates</label>
+                            </div>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="reset" class="btn btn-outline-secondary me-md-2">
+                                    <i class="bi bi-arrow-clockwise me-1"></i> Reset
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-send me-1"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DevPortfolio</h5>
+                    <p>Creating beautiful, functional websites and applications with modern technologies.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Connect with me</h5>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="background-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 DevPortfolio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Designed with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Portfolio Modal -->
+    <div class="modal fade" id="addPortfolioModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Portfolio Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="modalPortfolioForm">
+                        <div class="mb-3">
+                            <label for="modalProjectTitle" class="form-label">Project Title *</label>
+                            <input type="text" class="form-control" id="modalProjectTitle" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="modalProjectDescription" class="form-label">Project Description *</label>
+                            <textarea class="form-control" id="modalProjectDescription" rows="2" required></textarea>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="modalProjectImage" class="form-label">Project Image URL *</label>
+                                <input type="url" class="form-control" id="modalProjectImage" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="modalProjectCategory" class="form-label">Project Category *</label>
+                                <select class="form-select" id="modalProjectCategory" required>
+                                    <option value="" selected disabled>Select category</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="mobile-app">Mobile App</option>
+                                    <option value="ui-ux">UI/UX Design</option>
+                                    <option value="e-commerce">E-commerce</option>
+                                    <option value="dashboard">Dashboard</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="modalProjectTechnologies" class="form-label">Technologies Used *</label>
+                            <input type="text" class="form-control" id="modalProjectTechnologies" required>
+                            <div class="form-text">Separate with commas: React, Node.js, MongoDB</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addProjectFromModal()">Add Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Portfolio data storage
+        let portfolioItems = [];
+        let isListView = false;
+        
+        // Sample initial portfolio items
+        const initialPortfolioItems = [
+            {
+                id: 1,
+                title: "E-commerce Platform",
+                description: "A responsive e-commerce website with shopping cart, payment integration, and admin dashboard.",
+                image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                technologies: ["React", "Node.js", "MongoDB"],
+                category: "web-development",
+                link: "#"
+            },
+            {
+                id: 2,
+                title: "Finance Dashboard",
+                description: "Interactive dashboard for financial data visualization with real-time charts and reporting tools.",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                technologies: ["Vue.js", "D3.js", "Firebase"],
+                category: "dashboard",
+                link: "#"
+            },
+            {
+                id: 3,
+                title: "Travel Blog",
+                description: "A responsive travel blog with photo galleries, interactive maps, and social sharing features.",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                technologies: ["HTML/CSS", "JavaScript", "WordPress"],
+                category: "web-development",
+                link: "#"
+            }
+        ];
+        
+        // Initialize portfolio on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if portfolio data exists in localStorage
+            const savedPortfolio = localStorage.getItem('portfolioItems');
+            
+            if (savedPortfolio) {
+                portfolioItems = JSON.parse(savedPortfolio);
+            } else {
+                portfolioItems = [...initialPortfolioItems];
+                savePortfolioToLocalStorage();
+            }
+            
+            // Render portfolio items
+            renderPortfolio();
+            
+            // Update portfolio count
+            updatePortfolioCount();
+        });
+        
+        // Function to save portfolio to localStorage
+        function savePortfolioToLocalStorage() {
+            localStorage.setItem('portfolioItems', JSON.stringify(portfolioItems));
+        }
+        
+        // Function to render portfolio items
+        function renderPortfolio() {
+            const portfolioContainer = document.getElementById('portfolio-container');
+            const emptyPortfolio = document.getElementById('empty-portfolio');
+            
+            // Clear the container
+            portfolioContainer.innerHTML = '';
+            
+            if (portfolioItems.length === 0) {
+                // Show empty portfolio message
+                emptyPortfolio.classList.remove('d-none');
+                portfolioContainer.classList.add('d-none');
+            } else {
+                // Hide empty portfolio message
+                emptyPortfolio.classList.add('d-none');
+                portfolioContainer.classList.remove('d-none');
+                
+                // Render each portfolio item
+                portfolioItems.forEach(item => {
+                    const portfolioItem = createPortfolioCard(item);
+                    portfolioContainer.appendChild(portfolioItem);
+                });
+            }
+            
+            // Update portfolio count
+            updatePortfolioCount();
+        }
+        
+        // Function to create a portfolio card
+        function createPortfolioCard(item) {
+            const col = document.createElement('div');
+            col.className = isListView ? 'col-12' : 'col-md-6 col-lg-4';
+            
+            // Create card element
+            const card = document.createElement('div');
+            card.className = 'card h-100';
+            
+            // Create card content
+            card.innerHTML = `
+                <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title">${item.title}</h5>
+                        <span class="badge bg-secondary">${getCategoryLabel(item.category)}</span>
+                    </div>
+                    <p class="card-text flex-grow-1">${item.description}</p>
+                    <div class="mb-3">
+                        ${item.technologies.map(tech => `<span class="badge bg-primary me-1 mb-1">${tech}</span>`).join('')}
+                    </div>
+                    <div class="d-flex justify-content-between mt-auto">
+                        <button class="btn btn-sm btn-outline-primary" onclick="viewProjectDetails(${item.id})">
+                            <i class="bi bi-eye me-1"></i> View
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteProject(${item.id})">
+                            <i class="bi bi-trash me-1"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            col.appendChild(card);
+            return col;
+        }
+        
+        // Function to get category label
+        function getCategoryLabel(category) {
+            const categories = {
+                'web-development': 'Web Dev',
+                'mobile-app': 'Mobile App',
+                'ui-ux': 'UI/UX',
+                'e-commerce': 'E-commerce',
+                'dashboard': 'Dashboard',
+                'other': 'Other'
+            };
+            
+            return categories[category] || category;
+        }
+        
+        // Function to update portfolio count
+        function updatePortfolioCount() {
+            const countElement = document.getElementById('portfolio-count');
+            countElement.textContent = `${portfolioItems.length} Project${portfolioItems.length !== 1 ? 's' : ''}`;
+        }
+        
+        // Function to toggle between grid and list view
+        function toggleViewMode() {
+            isListView = !isListView;
+            const toggleButton = document.getElementById('view-toggle');
+            
+            if (isListView) {
+                toggleButton.innerHTML = '<i class="bi bi-list me-1"></i> List View';
+            } else {
+                toggleButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i> Grid View';
+            }
+            
+            renderPortfolio();
+        }
+        
+        // Function to add project from main form
+        document.getElementById('addPortfolioForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const title = document.getElementById('projectTitle').value;
+            const category = document.getElementById('projectCategory').value;
+            const description = document.getElementById('projectDescription').value;
+            const image = document.getElementById('projectImage').value;
+            const technologies = document.getElementById('projectTechnologies').value.split(',').map(tech => tech.trim());
+            const link = document.getElementById('projectLink').value;
+            
+            // Create new project object
+            const newProject = {
+                id: Date.now(), // Generate unique ID
+                title: title,
+                category: category,
+                description: description,
+                image: image,
+                technologies: technologies,
+                link: link || '#'
+            };
+            
+            // Add to portfolio
+            portfolioItems.unshift(newProject);
+            
+            // Save to localStorage
+            savePortfolioToLocalStorage();
+            
+            // Render updated portfolio
+            renderPortfolio();
+            
+            // Reset form
+            document.getElementById('addPortfolioForm').reset();
+            
+            // Show success message
+            showAlert('Project added successfully to your portfolio!', 'success');
+            
+            // Scroll to portfolio section
+            document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Function to add project from modal
+        function addProjectFromModal() {
+            // Get form values from modal
+            const title = document.getElementById('modalProjectTitle').value;
+            const category = document.getElementById('modalProjectCategory').value;
+            const description = document.getElementById('modalProjectDescription').value;
+            const image = document.getElementById('modalProjectImage').value;
+            const technologies = document.getElementById('modalProjectTechnologies').value.split(',').map(tech => tech.trim());
+            
+            if (!title || !category || !description || !image || technologies.length === 0) {
+                showAlert('Please fill all required fields!', 'danger');
+                return;
+            }
+            
+            // Create new project object
+            const newProject = {
+                id: Date.now(), // Generate unique ID
+                title: title,
+                category: category,
+                description: description,
+                image: image,
+                technologies: technologies,
+                link: '#'
+            };
+            
+            // Add to portfolio
+            portfolioItems.unshift(newProject);
+            
+            // Save to localStorage
+            savePortfolioToLocalStorage();
+            
+            // Render updated portfolio
+            renderPortfolio();
+            
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addPortfolioModal'));
+            modal.hide();
+            
+            // Reset modal form
+            document.getElementById('modalPortfolioForm').reset();
+            
+            // Show success message
+            showAlert('Project added successfully to your portfolio!', 'success');
+        }
+        
+        // Function to view project details
+        function viewProjectDetails(projectId) {
+            const project = portfolioItems.find(item => item.id === projectId);
+            
+            if (project) {
+                alert(`Project Details:\n\nTitle: ${project.title}\nCategory: ${getCategoryLabel(project.category)}\nDescription: ${project.description}\nTechnologies: ${project.technologies.join(', ')}`);
+            }
+        }
+        
+        // Function to delete a project
+        function deleteProject(projectId) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                // Remove project from array
+                portfolioItems = portfolioItems.filter(item => item.id !== projectId);
+                
+                // Save to localStorage
+                savePortfolioToLocalStorage();
+                
+                // Render updated portfolio
+                renderPortfolio();
+                
+                // Show success message
+                showAlert('Project deleted successfully!', 'info');
+            }
+        }
+        
+        // Function to show alert message
+        function showAlert(message, type) {
+            // Create alert element
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            alertDiv.style.top = '20px';
+            alertDiv.style.right = '20px';
+            alertDiv.style.zIndex = '1050';
+            alertDiv.style.minWidth = '300px';
+            alertDiv.role = 'alert';
+            
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            // Add to document
+            document.body.appendChild(alertDiv);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.parentNode.removeChild(alertDiv);
+                }
+            }, 3000);
+        }
+        
+        // Contact form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            showAlert(`Thank you, ${firstName}! Your message has been sent. I'll get back to you at ${email} soon.`, 'success');
+            
+            // Reset the form
+            document.getElementById('contactForm').reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
